@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --zenith-black: #050505;
+  --zenith-orange: #F97316;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+  position: relative;
+}
+
+.zenith-bg {
+  position: relative;
+  min-height: 100vh;
+  background: transparent;
+}
+
+@layer utilities {
+  .text-glow-orange {
+    text-shadow: 0 0 15px rgba(249, 115, 22, 0.4);
+  }
+
+  .text-glow-white {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(249, 115, 22, 0.2);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(249, 115, 22, 0.5);
+  }
+}

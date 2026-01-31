@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRONX - UX Design Directions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&family=Archivo+Black&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-green': '#39FF14',
+                        'neon-red': '#FF3131',
+                        'dark-bg': '#0A0A0A',
+                        'dark-surface': '#1A1A1A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains+Mono', 'monospace'],
+                        brutal: ['Archivo+Black', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glitch-hover:hover {
+            text-shadow: 2px 0 #FF3131, -2px 0 #39FF14;
+        }
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 10;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+            opacity: 0.1;
+            position: absolute;
+            bottom: 100%;
+            animation: scanline 6s linear infinite;
+        }
+        @keyframes scanline {
+            0% { bottom: 100%; }
+            100% { bottom: -100px; }
+        }
+        .mockup-card {
+            transition: transform 0.3s ease;
+        }
+        .mockup-card:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-[#EDEDED] font-sans overflow-x-hidden p-8">
+    <div class="scanline pointer-events-none"></div>
+
+    <header class="mb-12 border-b-2 border-neon-green pb-4">
+        <h1 class="text-6xl font-brutal uppercase italic text-neon-green glitch-hover">BRONX DESIGN EXPLORATION</h1>
+        <p class="text-xl font-mono mt-2">> PROGETTO: BRONX | TARGET: GEN Z / BLACK HUMOR | STATUS: MOCKUP_PHASE</p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <!-- Direction A: The Underworld -->
+        <div class="mockup-card p-6 border-2 border-[#EDEDED] bg-black">
+            <h2 class="text-2xl font-brutal mb-4 uppercase bg-neon-red text-black px-2 inline-block">01. UNDERWORLD</h2>
+            <p class="font-mono text-sm mb-6 text-gray-400">// ESTETICA BISCA CLANDESTINA</p>
+            
+            <div class="bg-dark-surface p-4 border border-[#333] mb-4">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-xs font-mono">FRIGO_A1</span>
+                    <span class="text-xs bg-neon-green text-black px-1 font-bold">ONLINE</span>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 border border-[#444] p-2">
+                        <div class="w-12 h-12 bg-gray-800 flex items-center justify-center font-bold">🍺</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold">ICHNUSA 0.33</h3>
+                            <p class="text-neon-green font-mono">€ 2.50 [GUEST: € 3.20]</p>
+                        </div>
+                        <button class="bg-neon-red text-white p-2 font-brutal text-xs uppercase hover:invert">PAGA_O_MUORI</button>
+                    </div>
+                </div>
+            </div>
+            <p class="text-xs italic text-neon-red font-mono">"Se provi a non pagare, il bot Telegram ti sputtana davanti a tutti."</p>
+        </div>
+
+        <!-- Direction B: Trading Floor -->
+        <div class="mockup-card p-6 border-2 border-neon-green bg-black">
+            <h2 class="text-2xl font-mono font-bold mb-4 uppercase text-neon-green">02. TRADING FLOOR</h2>
+            <p class="font-mono text-sm mb-6 text-gray-400">// LIVE BETTING STYLE</p>
+            
+            <table class="w-full text-left font-mono text-xs border-collapse">
+                <thead class="bg-neon-green text-black uppercase">
+                    <tr>
+                        <th class="p-1">PRODOTTO</th>
+                        <th class="p-1">STOCK</th>
+                        <th class="p-1">QUOTA</th>
+                        <th class="p-1">BET</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-[#333]">
+                    <tr>
+                        <td class="p-1">PERONI_CHILL</td>
+                        <td class="p-1 text-neon-red">▼ 4</td>
+                        <td class="p-1 text-neon-green">€ 1.80</td>
+                        <td class="p-1"><button class="border border-neon-green px-1 hover:bg-neon-green hover:text-black">COMPRA</button></td>
+                    </tr>
+                    <tr>
+                        <td class="p-1">JACK_DANIELS</td>
+                        <td class="p-1 text-green-500">▲ 12</td>
+                        <td class="p-1 text-neon-green">€ 4.50</td>
+                        <td class="p-1"><button class="border border-neon-green px-1 hover:bg-neon-green hover:text-black">COMPRA</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="mt-6 border-t-2 border-neon-green pt-4">
+                <div class="bg-neon-green text-black p-1 text-[10px] font-bold animate-pulse text-center">LAST_CONSUMPTION: MARCO_B (ICHNUSA) - 2 MIN AGO</div>
+            </div>
+        </div>
+
+        <!-- Direction C: The Terminal -->
+        <div class="mockup-card p-6 border-2 border-white bg-dark-bg font-mono">
+            <h2 class="text-2xl font-bold mb-4 uppercase text-white bg-white text-black px-1 inline-block">03. TERMINAL</h2>
+            <p class="text-sm mb-6 text-gray-500">// HACK_LOG MINIMALISM</p>
+            
+            <div class="text-sm space-y-1">
+                <p class="text-neon-green">root@bronx:~$ list_frigo --status=full</p>
+                <p class="pl-4">|-- birra_peroni: stock (8) price (1.50)</p>
+                <p class="pl-4">|-- water_plain: stock (12) price (0.50)</p>
+                <p class="text-neon-green">root@bronx:~$ execute pay --user=guest --prod=peroni</p>
+                <div class="p-2 border border-white mt-4 bg-white text-black">
+                    <p class="font-bold underline">REQUESTING_PAYPAL_API...</p>
+                    <p class="text-xs">LOG: Redirecting to secure_checkout_v2...</p>
+                </div>
+            </div>
+            <p class="mt-6 text-[10px] text-gray-600">SYS_LOG: 14:02:44 - INTRUSION_DETECTED - BEVI_IN_PACE</p>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-dark-surface p-12 border-t-2 border-neon-red">
+        <div>
+            <h3 class="text-4xl font-brutal uppercase mb-6 italic text-neon-red">L'ESPERIMENTO "BLACK HUMOR"</h3>
+            <div class="bg-black border-l-4 border-neon-red p-6">
+                <p class="text-lg font-mono text-neon-red">ERROR_402: PAYMENT_REQUIRED</p>
+                <p class="mt-2 font-sans italic text-xl">"Sei più povero di quanto pensassimo. Magari prova con un rubinetto."</p>
+                <div class="mt-4 flex justify-end">
+                    <span class="text-xs font-mono font-bold text-gray-600">-- AI_BUTLER_SARCASM_V1.0</span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3 class="text-4xl font-brutal uppercase mb-6 italic text-neon-green">FEEDBACK SOCIALE</h3>
+            <div class="bg-black border-l-4 border-neon-green p-6">
+                <div class="flex items-center gap-2 mb-2 font-mono text-neon-green">
+                    <span>[TELEGRAM_BOT]</span>
+                    <span class="text-xs text-gray-500">TODAY 11:05</span>
+                </div>
+                <p class="font-sans text-xl">"<b>@Giannino</b> ha appena scommesso sul suo fegato comprando una peroni calda da 66cl. Qualcuno lo fermi."</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-16 text-center font-mono text-xs text-gray-500">
+        <p>BRONX UX SPECIFICATION | MOCKUP VISUALIZER | © 2026 BRONX_TEAM</p>
+    </footer>
+</body>
+</html>
