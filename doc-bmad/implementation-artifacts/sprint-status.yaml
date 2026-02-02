@@ -1,0 +1,38 @@
+generated: 2026-01-31 17:35
+project: Bronx
+project_key: NOKEY
+tracking_system: file-system
+story_location: "doc-bmad/implementation-artifacts"
+
+development_status:
+  epic-1: in-progress
+  1-1-project-initialization-zenith-theme: done
+  1-1b-infrastructure-schema-setup: done
+  1-2-surface-assets-cinematic-bokeh-background: done
+  1-3-atomic-zenith-ui-library: done
+  epic-1-retrospective: optional
+
+  epic-6: in-progress
+  6-1-admin-user-management: in-progress
+  6-2-guest-link-generation: in-progress
+  6-3-product-management-interface: in-progress
+  epic-6-retrospective: optional
+
+  epic-2: in-progress
+  2-1-supabase-auth-member-login: ready-for-dev
+  2-2-guest-quick-access-protocol: backlog
+  epic-2-retrospective: optional
+
+  epic-3: backlog
+  3-1-the-elite-list-display: backlog
+  3-2-ai-butler-nlp-stock-management: backlog
+  epic-3-retrospective: optional
+
+  epic-4: backlog
+  4-1-paypal-one-tap-checkout: backlog
+  4-2-social-sync-telegram-feed: backlog
+  epic-4-retrospective: optional
+
+  epic-5: backlog
+  5-1-pwa-installation-service-worker: backlog
+  epic-5-retrospective: optional

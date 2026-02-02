@@ -95,8 +95,8 @@ Integrazione del gateway di pagamento PayPal e attivazione del Social Feedback L
 Conversione in Progressive Web App per installazione e uso offline, sincronizzazione dati resiliente e dashboard di controllo Admin completa.
 **FRs covered:** FR13
 
-## Epic 1: Foundations & Elite Shell
-**Goal:** Inizializzare l'ecosistema tecnico e l'identità visiva d'élite (Vite, Tailwind, Bokeh Effect).
+## Epic 1: Foundations, Infrastructure & Elite Shell
+**Goal:** Inizializzare l'ecosistema tecnico, configurare l'infrastruttura (DB, Auth) e l'identità visiva d'élite.
 
 ### Story 1.1: Project Initialization & Zenith Theme
 As a Developer,
@@ -107,6 +107,16 @@ So that I have an "Elite" foundation for development.
 **Given** a clean workspace
 **When** I run `npx create-vite` and configure `tailwind.config.ts` with Zenith colors (#050505, #F97316)
 **Then** the project should serve a base page with the correct brand colors and typography.
+
+### Story 1.1b: Infrastructure & Schema Setup
+As a Developer,
+I want to set up the Supabase project and create the necessary database schema,
+So that the application has a backend to store users and products.
+
+**Acceptance Criteria:**
+**Given** a new Supabase project
+**When** I execute the SQL initialization scripts for `users`, `products`, `transactions` tables with RLS policies
+**Then** the database should be ready to accept connections and store data securely.
 
 ### Story 1.2: Surface Assets & Cinematic Bokeh Background
 As a User,
@@ -209,3 +219,36 @@ So that I can browse the catalog even when the connection is unstable.
 **Given** a PWA manifest and Service Worker
 **When** I visit the site on mobile
 **Then** I should be prompted to "Add to Home Screen" and be able to see the cached catalog without a network connection.
+
+## Epic 6: Admin Dashboard & Control
+**Goal:** Fornire all'Admin gli strumenti per gestire utenti, catalogo e stock.
+
+### Story 6.1: Admin User Management
+As an Admin,
+I want to view and manage the list of Soci,
+So that I can assign roles and verify active memberships.
+
+**Acceptance Criteria:**
+**Given** an authenticated Admin user
+**When** I access the "Elite Roster" section
+**Then** I should see a list of users and be able to edit their roles or status.
+
+### Story 6.2: Guest Link Generation
+As an Admin,
+I want to generate temporary access links for Guests,
+So that I can allow non-members to purchase from the catalog.
+
+**Acceptance Criteria:**
+**Given** the Admin Dashboard
+**When** I click "Generate Guest Key"
+**Then** the system should produce a unique URL valid for 3 hours that logs a user in as "Guest".
+
+### Story 6.3: Product Management Interface
+As an Admin,
+I want to add and edit products in the catalog,
+So that I can keep the offering up to date without using SQL commands.
+
+**Acceptance Criteria:**
+**Given** the Catalog Management view
+**When** I submit the "New Artifact" form
+**Then** a new product should be created in Supabase and appear immediately in the live catalog.
